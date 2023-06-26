@@ -3,13 +3,17 @@ import 'package:flutter_tdd_clean_architecture/features/number_trivia/domain/ent
 import 'package:flutter_tdd_clean_architecture/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 
 import '../../../../core/error/failure.dart';
+import '../../../../core/usecases/usecase.dart';
 
-class GetConcreteNumberTrivia {
+class GetConcreteNumberTrivia implements UseCase<NumberTrivia, int> {
   final NumberTriviaRepository repository;
 
   GetConcreteNumberTrivia({required this.repository});
 
-  Future<Either<Failure, NumberTrivia>> execute({required int number}) async {
-    return await repository.getConcreteNumberTrivia(number);
+  @override
+  Future<Either<Failure, NumberTrivia>> call(int number) async {
+    Either<Failure, NumberTrivia> res =
+        await repository.getConcreteNumberTrivia(number);
+    return res;
   }
 }
