@@ -5,7 +5,7 @@ import 'package:flutter_tdd_clean_architecture/features/number_trivia/domain/ent
 
 import '../../../../core/error/exceptions.dart';
 import '../../../../core/error/failure.dart';
-import '../../../../core/platform/network_info.dart';
+import '../../../../core/network/network_info.dart';
 import '../../domain/repositories/number_trivia_repository.dart';
 import '../datasources/number_trivia_local_datasource.dart';
 
